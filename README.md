@@ -37,6 +37,9 @@ The goal of this project is to simulate a real-world attack on an Active Directo
 
   ### Project Map
 
+  ![Project_ad_final1](https://github.com/user-attachments/assets/8b26bbfb-2d0a-41cc-9cdd-3f8ea76058ec)
+
+
   
 
 
