@@ -283,7 +283,9 @@ A second Telegram Bot action is triggered only after a successful account disabl
 
 <img width="956" alt="telegram full" src="https://github.com/user-attachments/assets/44dfb425-fe69-4c2e-b885-9a382bfa425b" />
 
+### Step 8: Domain Controller Verification (Manual Check)
 
+To ensure complete accuracy, a final manual confirmation is performed directly on the Domain Controller.
 
 
 
