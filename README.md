@@ -73,6 +73,8 @@ You can confirm that Testmachine has joined in Domain by following image:
 
 ![computers(useradded)](https://github.com/user-attachments/assets/1f4ed5ff-9120-4af0-b7af-3b3ba5e2d603)
 
+Note: I have enabled Remote Desktop in TestMachine
+
 ### Step 2: Setup Laptop 2 – Splunk, SOAR, and Attack Simulation (Ubuntu VM)
 
 Downloaded and Installed ubuntu VM on virtual box, I have installed splunk on ubuntu VM:
@@ -107,7 +109,55 @@ NOTE: Installing Shuffle SOAR on-premises requires more configuration than using
 
 To install Shuffle SOAR on ubuntu,I have followed these steps: https://github.com/Venkatadri-Ch/Active-Directory-security-with-SIEM-SOAR/blob/2fcae1d06267e7d4504c77f9831df9684ffcb930/Installing%20Shuffle%20SOAR.md
 
+![Screenshot from 2025-06-11 10-31-50](https://github.com/user-attachments/assets/fe1ad854-f086-4c5b-b1e0-f65ac723683a)
+
+
 NOTE: BY using BotFather in telegram , I have created one bot in telegram , which further used for alerting purpose
+
+ ### Phase 2: Simulated Attack & Detection
+
+### Step 3: Simulate Unauthorized RDP Access:
+
+Installe dFreeRDP on ubuntu
+
+    sudo apt update
+    sudo apt install freerdp2-x11
+    
+This installs the FreeRDP client which provides the xfreerdp command.
+
+Command syntax that I have used to gain access to Testmachine from ubuntu is: 
+
+    xfreerdp /u:<username> /p:<password> /v:<ip_or_hostname>  /cert-ignore
+    
+After execution of the command I got access to the testmachine:
+
+![Screenshot from 2025-06-06 11-32-43](https://github.com/user-attachments/assets/43b3fa85-ce6d-4779-aa76-f6bf6d1be8ea)
+
+### Step 4: Detection of event and Creation of Alert in splunk
+
+I detected a relevant event in Splunk that indicated potential remote desktop (RDP) activity.
+
+![Screenshot from 2025-06-17 08-07-43](https://github.com/user-attachments/assets/4d99d55a-6a25-4355-84bc-b408bd657776)
+
+After analyzing the event details and confirming its significance, I proceeded to create a Splunk alert(with the name Unaitherized-successful-login-RDP) to monitor similar events in the future. This alert is configured to trigger whenever a matching pattern is detected, ensuring real-time visibility and proactive response.
+
+![Screenshot from 2025-06-06 11-15-51](https://github.com/user-attachments/assets/5470704a-6ca8-4ac3-ac6c-9030b3c9fe57)
+
+The Splunk alert was triggered as a result of detecting an event that matched the specified search criteria. This confirms that the alerting logic is correctly identifying the relevant RDP activity.
+
+![Screenshot from 2025-06-06 11-18-33](https://github.com/user-attachments/assets/01f725b1-c202-46ab-b283-f229a6f132e8)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
