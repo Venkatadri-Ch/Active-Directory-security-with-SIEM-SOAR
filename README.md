@@ -203,6 +203,89 @@ Complete Workflow with the user input:
 
 ![Screenshot from 2025-06-16 15-00-01](https://github.com/user-attachments/assets/ff549619-3934-4fdb-aa4b-21bee7bea517)
 
+### Final Workflow Overview with User Input App Integration
+
+1. Trigger
+
+- Source: Splunk
+
+- Action: Webhook is triggered by a security alert.
+
+2. Initial Notification
+
+- Tool: Telegram Bot (Step 1)
+
+- Action: Sends an alert to the security team detailing the detected event.
+
+3. User Decision Point
+
+- App: User Input
+
+- Prompt: Asks the analyst whether to proceed with disabling the user account.
+
+If "Yes" → Continue to next step.
+
+If "No" → Workflow halts here.
+
+4. User Account Action
+
+- App: Active Directory (Step 1)
+
+- Action: Disables the affected user account.
+
+5. Attribute Retrieval
+
+- App: Active Directory (Step 2)
+
+- Action: Retrieves user attributes (e.g., status, flags) for confirmation and logging.
+
+6. Post-Processing
+
+- Tool: Shuffle tools (repeat back me)
+
+- Action: Handles final data processing, normalization, or enrichment tasks.
+
+7. Condition Check
+
+- Condition: Checks if ACCOUNTDISABLED is present in the retrieved attributes.
+
+If true → Proceed to final step.
+
+If false → Skip notification.
+
+8. Final Notification
+
+- Tool: Telegram Bot (Step 2)
+
+- Action: Sends confirmation that the user account has been successfully disabled.
+
+### Phase 4: Notification & Confirmation
+This phase ensures that appropriate alerts are sent to the security team and final actions are confirmed after execution. It includes initial alerting, validation of notification delivery, and a final status confirmation once the user account has been processed.
+
+# Step 6: Alert Notifications Monitoring
+
+# Telegram Bot Notification
+Once the Splunk-triggered webhook activates the workflow, the first Telegram Bot step sends a real-time alert to the designated Telegram channel to inform the security team of the detected event.
+
+<img width="577" alt="1st telegram" src="https://github.com/user-attachments/assets/37f1d043-0c52-4d04-b454-d5d1c9684b4e" />
+
+# Email Alert
+This will done in the workflow with user_input app , These notifications serve as the initial response indicators, alerting analysts to potential issues and prompting a manual decision through the User Input app.
+
+<img width="455" alt="mail alert" src="https://github.com/user-attachments/assets/4cb49337-4d7c-4a1d-8c69-317765a128a1" />
+
+
+# Step 7: Action Confirmation
+After the user decision is made and, if approved, the user account has been disabled, the workflow continues to its final communication step.
+
+# Final Telegram Confirmation
+A second Telegram Bot action is triggered only after a successful account disablement is verified through attribute checks (e.g., detecting the ACCOUNTDISABLED flag in Active Directory). This message provides a clear confirmation to the team that remediation has been executed successfully.
+
+<img width="956" alt="telegram full" src="https://github.com/user-attachments/assets/44dfb425-fe69-4c2e-b885-9a382bfa425b" />
+
+
+
+
 
 
 
