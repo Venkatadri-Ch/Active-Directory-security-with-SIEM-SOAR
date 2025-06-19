@@ -96,6 +96,16 @@ To confirm forwarder state , we can confirm through the services running on the 
 
 ![splunk forwarder (services)](https://github.com/user-attachments/assets/28f9127d-2b5b-4dac-aecc-8b52fc37dae2)
 
+I successfully got data to the splunk from both the machines after completion of splunk universal forwarder installation and configuration:
+
+![Screenshot from 2025-06-05 21-36-51](https://github.com/user-attachments/assets/5ac1be08-9ab0-43ef-ae05-b3458d3f141c)
+
+
+
+
+
+
+
 
 
 
