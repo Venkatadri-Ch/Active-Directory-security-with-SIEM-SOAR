@@ -152,7 +152,24 @@ The Splunk alert was triggered as a result of detecting an event that matched th
 
 ### Phase 3: Response Automation via Shuffle SOAR
 
-### step 5: Configured Shuffle SOAR Workflow
+### step 5: Configured Shuffle SOAR Workflow:
+
+I’ve set up a new workflow in Shuffle SOAR called Project-AD. It’s focused on handling events related to Active Directory activities, like unautherized RDP logins or sucessfull logins, and it’s integrated with Splunk to automate part of the detection and response process.
+
+A webhook trigger has been integrated into the Project-AD workflow within Shuffle SOAR. The webhook URL was copied from Shuffle and configured in a Splunk alert using the webhook alert action. This enables real-time communication from Splunk to Shuffle—when the alert conditions are met, Splunk sends an HTTP POST request to the webhook endpoint, thereby triggering the automation flow defined in Shuffle.
+
+![Screenshot from 2025-06-06 11-48-31](https://github.com/user-attachments/assets/381aabe6-84eb-45f3-8e22-265841c6b737)
+
+I had already set up a Telegram bot earlier, and I’ve now integrated it into the Shuffle workflow. I used the Telegram Bot app in Shuffle and connected it with my existing bot. After re-running the workflow, it successfully sent an alert message to the Telegram group, so the setup is working.
+
+![Screenshot from 2025-06-16 10-33-40](https://github.com/user-attachments/assets/9e54f034-c64b-4c93-acda-17531034a9a4)
+
+I enabled the Active Directory app in the Shuffle workflow and used the "Get User Attributes" action instead of disabling the user—just to test if the integration works. After re-running the workflow, it pulled the user info successfully, so the AD setup is confirmed to be working.
+
+![Screenshot from 2025-06-11 19-43-15](https://github.com/user-attachments/assets/d69d32a3-331a-4a3e-ae88-5c03dd40ce27)
+
+
+
 
 
 
