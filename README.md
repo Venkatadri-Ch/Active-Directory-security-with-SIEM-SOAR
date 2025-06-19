@@ -168,6 +168,24 @@ I enabled the Active Directory app in the Shuffle workflow and used the "Get Use
 
 ![Screenshot from 2025-06-11 19-43-15](https://github.com/user-attachments/assets/d69d32a3-331a-4a3e-ae88-5c03dd40ce27)
 
+I’ve added the User Input app into the workflow so it now waits for a user decision. If the user clicks "Yes", the workflow continues. If "No" is selected, it stops. This gives us more control over which actions actually get executed, especially for sensitive operations.
+
+<img width="608" alt="user input app" src="https://github.com/user-attachments/assets/de15a9a6-310b-4525-bec6-3b1157a4402f" />
+
+It will sends mail aler like the follwing picture:
+
+<img width="455" alt="mail alert" src="https://github.com/user-attachments/assets/1b44acc5-24c9-4af9-970c-b38738cbb5ba" />
+
+when we select the option (YES/NO), it will pop up like this :
+
+<img width="644" alt="userinput" src="https://github.com/user-attachments/assets/706bf68f-ff12-479a-8c03-326e9c7d5cba" />
+
+I was kept the User input app aside for some time , to build the complete workflow without user action , making workflow as self automated without user input.
+
+
+
+
+
 
 
 
