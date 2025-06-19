@@ -289,6 +289,13 @@ To ensure complete accuracy, a final manual confirmation is performed directly o
 
 ![User DIsbled confirmation](https://github.com/user-attachments/assets/a32b0c9b-33c8-4e5a-b534-c6801b79fe2d)
 
+###  Final Outcome
+
+* RDP login attempt detected by Splunk and triggers alert.
+* Alert triggers a webhook to Shuffle SOAR.
+* Shuffle sends alert to Telegram_bot .
+* User is automatically disabled in Active DirectoryAfter successful execution of Shuffle workflow.
+* Updated Telegram notification confirms action to the admin or security team.
 
 
 
