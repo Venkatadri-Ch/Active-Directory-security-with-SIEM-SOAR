@@ -182,10 +182,7 @@ when we select the option (YES/NO), it will pop up like this :
 
 I was kept the User input app aside for some time , to build the complete workflow without user action , making workflow as self automated without user input.
 
-
-
-
-
+The current workflow begins with a Webhook trigger, which activates upon receiving an alert from Splunk. This is followed by a Telegram Bot notification, which sends the alert to the appropriate Telegram chat. Next, the Active Directory app is used to disable the user account associated with the alert. After that,
 
 
 
