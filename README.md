@@ -105,6 +105,7 @@ To install them I followed these steps: https://github.com/Venkatadri-Ch/Active-
 
 To install Shuffle SOAR on ubuntu,I have followed these steps: https://github.com/Venkatadri-Ch/Active-Directory-security-with-SIEM-SOAR/blob/2fcae1d06267e7d4504c77f9831df9684ffcb930/Installing%20Shuffle%20SOAR.md
 
+NOTE: BY using BotFather in telegram , I have created one bot in telegram , which further used for alerting purpose
 
 
 
