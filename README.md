@@ -114,7 +114,7 @@ To install Shuffle SOAR on ubuntu,I have followed these steps: https://github.co
 
 NOTE: BY using BotFather in telegram , I have created one bot in telegram , which further used for alerting purpose
 
- ### Phase 2: Simulated Attack & Detection
+  ### Phase 2: Simulated Attack & Detection
 
 ### Step 3: Simulate Unauthorized RDP Access:
 
@@ -136,6 +136,8 @@ After execution of the command I got access to the testmachine:
 ### Step 4: Detection of event and Creation of Alert in splunk
 
 I detected a relevant event in Splunk that indicated potential remote desktop (RDP) activity.
+Note: 192.168.31.180 = Domain User
+      192.168.31.66 = Domain Controller
 
 ![Screenshot from 2025-06-17 08-07-43](https://github.com/user-attachments/assets/4d99d55a-6a25-4355-84bc-b408bd657776)
 
@@ -146,6 +148,12 @@ After analyzing the event details and confirming its significance, I proceeded t
 The Splunk alert was triggered as a result of detecting an event that matched the specified search criteria. This confirms that the alerting logic is correctly identifying the relevant RDP activity.
 
 ![Screenshot from 2025-06-06 11-18-33](https://github.com/user-attachments/assets/01f725b1-c202-46ab-b283-f229a6f132e8)
+
+
+### Phase 3: Response Automation via Shuffle SOAR
+
+### step 5: Configured Shuffle SOAR Workflow
+
 
 
 
