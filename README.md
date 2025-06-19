@@ -103,6 +103,8 @@ I successfully got data to the splunk from both the machines after completion of
 Shuffle SOAR requires Docker and Docker Compose because it runs as multiple connected services (like web UI, backend, and database) in containers. Docker handles running these services, and Docker Compose manages and starts them together with one simple command.
 To install them I followed these steps: https://github.com/Venkatadri-Ch/Active-Directory-security-with-SIEM-SOAR/blob/2fcae1d06267e7d4504c77f9831df9684ffcb930/Installing-docker-%26-docker-compose.md
 
+NOTE: Installing Shuffle SOAR on-premises requires more configuration than using the cloud version, like DNS configuration,Shuffle-worker setup, Set up SMTP settings for alerts and notifications, etc
+
 To install Shuffle SOAR on ubuntu,I have followed these steps: https://github.com/Venkatadri-Ch/Active-Directory-security-with-SIEM-SOAR/blob/2fcae1d06267e7d4504c77f9831df9684ffcb930/Installing%20Shuffle%20SOAR.md
 
 NOTE: BY using BotFather in telegram , I have created one bot in telegram , which further used for alerting purpose
