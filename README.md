@@ -285,7 +285,12 @@ A second Telegram Bot action is triggered only after a successful account disabl
 
 ### Step 8: Domain Controller Verification (Manual Check)
 
-To ensure complete accuracy, a final manual confirmation is performed directly on the Domain Controller.
+To ensure complete accuracy, a final manual confirmation is performed directly on the Domain Controller.Confirmed that user has been disabled:
+
+![User DIsbled confirmation](https://github.com/user-attachments/assets/a32b0c9b-33c8-4e5a-b534-c6801b79fe2d)
+
+
+
 
 
 
