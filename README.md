@@ -182,7 +182,31 @@ when we select the option (YES/NO), it will pop up like this :
 
 I was kept the User input app aside for some time , to build the complete workflow without user action , making workflow as self automated without user input.
 
-The current workflow begins with a Webhook trigger, which activates upon receiving an alert from Splunk. This is followed by a Telegram Bot notification, which sends the alert to the appropriate Telegram chat. Next, the Active Directory app is used to disable the user account associated with the alert. After that,
+The current workflow begins with a Webhook trigger, which activates upon receiving an alert from Splunk. This is followed by a Telegram Bot notification, which sends the alert to the appropriate Telegram chat. Next, the Active Directory app is used to disable the user account associated with the alert. After that,another Active Directory app is executed to retrieve the user's attributes for further analysis and finally,I have utilizes the Shuffle tool to complete or manage the remaining actions. 
+
+![Screenshot from 2025-06-16 12-56-51](https://github.com/user-attachments/assets/569417a5-c164-4e13-93e0-6dc5da3595b2)
+
+
+In the output of workflow, I found that "ACCOUNTDISABLED"  :
+
+![Screenshot from 2025-06-16 13-23-20](https://github.com/user-attachments/assets/8885152f-3438-4bd5-96f1-2eae85b64650)
+
+After the Shuffle step(repeat back to me), a conditional check is applied: if the retrieved user attributes contain ACCOUNTDISABLED, the workflow proceeds to trigger a second Telegram Bot notification to confirm that the user's account has been successfully disabled. If the condition is not met, the Telegram update is skipped.
+
+![Screenshot from 2025-06-16 13-34-52](https://github.com/user-attachments/assets/a053cc93-22ab-4608-8886-fa96503735f4)
+
+This workflow is designed to operate completely autonomously, enabling rapid detection, response, and communication without requiring user approval or input. The User Input app has been intentionally excluded at this stage to streamline automation.
+
+![Screenshot from 2025-06-16 13-54-14](https://github.com/user-attachments/assets/48988cf7-578e-4926-81d0-367163ab22a1)
+
+Complete Workflow with the user input:
+
+![Screenshot from 2025-06-16 15-00-01](https://github.com/user-attachments/assets/ff549619-3934-4fdb-aa4b-21bee7bea517)
+
+
+
+
+
 
 
 
