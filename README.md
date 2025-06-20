@@ -293,7 +293,7 @@ Important Note: Disabling a user account does not terminate existing sessions. I
 Run this command in Domain Controller first to list active sessions:
     
      query session
-Example output:
+output:
 
     SESSIONNAME       USERNAME        ID    STATE     TYPE        DEVICE
     rdp-tcp#4         testuser        2     Active    rdpwd
