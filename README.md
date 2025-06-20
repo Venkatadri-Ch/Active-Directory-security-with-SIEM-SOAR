@@ -289,6 +289,30 @@ To ensure complete accuracy, a final manual confirmation is performed directly o
 
 ![User DIsbled confirmation](https://github.com/user-attachments/assets/a32b0c9b-33c8-4e5a-b534-c6801b79fe2d)
 
+Important Note: Disabling a user account does not terminate existing sessions. If the user is already logged in, the session remains active until they log out or the session is forcibly terminated.This is because we don't have logout feature in shuffle which may come in futute(their documentation said that). Here some manual work needed to log off the user i have used these simple steps:
+Run this command in Domain Controller first to list active sessions:
+    
+     query session
+Example output:
+
+    SESSIONNAME       USERNAME        ID    STATE     TYPE        DEVICE
+    rdp-tcp#4         testuser        2     Active    rdpwd
+    console           Administrator   1     Active
+To log off testuser, run:
+
+    logoff 2
+This will:
+
+- Kill that RDP session
+
+- Log the user out immediately
+
+- Close all their open programs without warning
+
+When I try to login after all these steps,I found this:
+
+![IMG_20250620_115549](https://github.com/user-attachments/assets/afa65bdc-2bf5-4518-a1db-1e1ae08f4ee1)
+
 ###  Final Outcome
 
 * RDP login attempt detected by Splunk and triggers alert.
