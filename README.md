@@ -289,7 +289,7 @@ To ensure complete accuracy, a final manual confirmation is performed directly o
 
 ![User DIsbled confirmation](https://github.com/user-attachments/assets/a32b0c9b-33c8-4e5a-b534-c6801b79fe2d)
 
-Important Note: Disabling a user account does not terminate existing sessions. If the user is already logged in, the session remains active until they log out or the session is forcibly terminated.This is because we don't have logout feature in shuffle which may come in futute(their documentation said that). Here some manual work needed to log off the user i have used these simple steps:
+Important Note: Disabling a user account does not terminate existing sessions. If the user is already logged in, the session remains active until they log out or the session is forcibly terminated. Here some manual work needed to log off the user i have used these simple steps:
 Run this command in Domain Controller first to list active sessions:
     
      query session
